@@ -17,6 +17,6 @@ public class Crema extends Aderezo{
     }
     
     public String toString(){
-        return "Aderezo de crema";
+        return "CREMA";
     }
 }

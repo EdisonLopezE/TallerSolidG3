@@ -16,6 +16,6 @@ public class Malvavisco extends Aderezo {
     }
     
     public String toString(){
-        return "Aderezo de Malvavisco";
+        return "MALVAVISCO";
     }
 }

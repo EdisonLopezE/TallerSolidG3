@@ -17,6 +17,6 @@ public class Frutilla extends Aderezo {
     }
     
     public String toString(){
-        return "Aderezo de frutilla";
+        return "FRUTILLA";
     }
 }
