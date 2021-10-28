@@ -21,7 +21,7 @@ public class ManejadorDePrecio {
             return precioFinal;
 	}
     
-    public String showPrecioFinal(Postre p) {
+    public static String showPrecioFinal(Postre p) {
     	return "Precio Final: $ " + calcularPrecioFinal(p);
      }
 }

@@ -9,6 +9,7 @@ import Adicionales.*;
 import Postres.*;
 import Procesos.*;
 import Leche.*;
+import java.util.ArrayList;
 /**
  *
  * @author djurado
@@ -17,27 +18,25 @@ public class Sistema {
     public static void main(String [ ] args){
         // Producir un helado de vainilla y una torta de chocolate, 
         // a ambos agregarles CREMA y FRUTILLAS
-        // y cambiar el tipo de leche por Leche Descremada
-        // Finalmente mostrar el precio final de cada uno
-        LecheEntera leche = new LecheDeslactosada();
-        ManejadorDeLeche mnj_leche = new ManejadorDeLeche();
+        // y cambiar el tipo de leche por Leche Deslactosada
+        ArrayList<Postre> arrPostres = new ArrayList<>();
+        ManejadorDeLeche mnj_leche = new ManejadorDeLeche(new LecheDescremada());
         
         // Producir Helado
-        Helado helado_vainilla = new Helado("Vainilla");
-        helado_vainilla.anadirAderezoPostre(new Crema() );
-        helado_vainilla.anadirAderezoPostre( new Frutilla());
-        System.out.println(helado_vainilla);
-        mnj_leche.cambiarTipoLeche(leche, helado_vainilla);
-        System.out.println(helado_vainilla.showPrecioFinal());
-        
+        Postre helado_vainilla = new Helado("Vainilla");
+        arrPostres.add(helado_vainilla);
         // Producir Pastel
-        Pastel pastel_chocolate = new Pastel("Chocolate");
-        pastel_chocolate.anadirAderezoPostre(new Crema());
-        pastel_chocolate.anadirAderezoPostre(new Frutilla());
-        System.out.println(pastel_chocolate);
-        mnj_leche.cambiarTipoLeche(leche, pastel_chocolate);
-        System.out.println(helado_vainilla.showPrecioFinal());
+        Postre pastel_chocolate = new Pastel("Chocolate");
+        arrPostres.add(pastel_chocolate);
         
+        arrPostres.forEach(postre -> {
+            postre.anadirAderezoPostre(new Crema());
+            postre.anadirAderezoPostre(new Frutilla());
+            System.out.println(postre);
+            mnj_leche.cambiarTipoLeche(new LecheDescremada(),postre);
+            System.out.println(ManejadorDePrecio.showPrecioFinal(postre));
+        });        
         
     }
+
 }
