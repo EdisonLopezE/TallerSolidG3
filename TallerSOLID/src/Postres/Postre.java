@@ -27,6 +27,14 @@ public class Postre {
     public String showPrecioFinal() {
     	return "Precio Final: $ " + calcularPrecioFinal();
     }
+    
+     public static void anadirAderezoPastel(Postre postre,Aderezo aderezo){
+        postre.getAderezos().add(aderezo);
+    }
+    
+    public static void quitarAderezoPastel(Postre postre,Aderezo aderezo){
+        postre.getAderezos().remove(aderezo);
+    }
 }
 
 
