@@ -22,19 +22,19 @@ public class Postre {
 	
 	public ArrayList<Aderezo> getAderezos(){
     	return aderezos;
-    }
+        }
     
-    public String showPrecioFinal() {
+        public String showPrecioFinal() {
     	return "Precio Final: $ " + calcularPrecioFinal();
-    }
+        }
     
-     public static void anadirAderezoPastel(Postre postre,Aderezo aderezo){
-        postre.getAderezos().add(aderezo);
-    }
+        public void anadirAderezoPostre(Aderezo aderezo){
+        aderezos.add(aderezo);
+        }
     
-    public static void quitarAderezoPastel(Postre postre,Aderezo aderezo){
-        postre.getAderezos().remove(aderezo);
-    }
+        public void quitarAderezoPostre(Aderezo aderezo){
+        aderezos.remove(aderezo);
+        }
 }
 
 
