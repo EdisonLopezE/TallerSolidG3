@@ -7,13 +7,16 @@ package Adicionales;
 
 /**
  *
- * @author Pedro Mendoza
+ * @author jjmg0
  */
-public abstract class Aderezo {
-    protected String nombre = "";
+public class Frutilla extends Aderezo {
     
-    public abstract void setNombre();
+    @Override
+    public void setNombre(){
+         nombre="frutilla";
+    }
     
-    public abstract String toString();
-    
+    public String toString(){
+        return "Aderezo de frutilla";
+    }
 }

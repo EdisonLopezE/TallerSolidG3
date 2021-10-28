@@ -7,13 +7,15 @@ package Adicionales;
 
 /**
  *
- * @author Pedro Mendoza
+ * @author jjmg0
  */
-public abstract class Aderezo {
-    protected String nombre = "";
+public class Malvavisco extends Aderezo {
+    @Override
+    public void setNombre(){
+         nombre="Malvavisco";
+    }
     
-    public abstract void setNombre();
-    
-    public abstract String toString();
-    
+    public String toString(){
+        return "Aderezo de Malvavisco";
+    }
 }
